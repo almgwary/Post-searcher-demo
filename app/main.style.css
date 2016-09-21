@@ -5,7 +5,14 @@
 ***/
 @import url("directive/post/post.directive.css"); 
 @import url("directive/paging/paging.directive.css"); 
+@import url("directive/loading/loading.directive.css"); 
 
+/***
+==========================================
+                  Common
+==========================================
+***/
+/*@import url("common/style/loading-bar.css"); */
 
 /***
 ==========================================
