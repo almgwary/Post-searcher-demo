@@ -23,3 +23,9 @@
     <!--End Posts-->
 </div>
 <div class="col-md-3"></div>
+
+<div class="pagin-controller">
+    <div class="counter">{{query._page}}   </div>
+    <button ng-click="prevpage()" class="paginate left {{query._page<1 ? 'disabled' :''}}"><i></i><i></i></button>
+    <button ng-click="nextpage()" class="paginate right  {{isLastpage ?  'disabled':''}}"><i></i><i></i></button>
+</div>

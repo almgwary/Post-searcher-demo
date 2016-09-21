@@ -42,9 +42,28 @@ angular.module('myApp.view1', ['ngRoute'])
     $scope.getPosts = function (query) {
       postsService.getPosts(query)
         .then(function (data) {
-          $scope.posts = data.data;
+          if(data.data.length > 0){
+            $scope.posts = data.data;
+          }else {
+            $scope.isLastpage = true;
+          }
       })
     }
      $scope.getPosts($scope.query);
 
+     // next page
+     $scope.nextpage = function(){
+       if(!$scope.isLastpage){
+         $scope.query._page++;
+          $scope.getPosts($scope.query);
+       }
+     }
+     // previouse page
+     $scope.prevpage = function(){
+       if($scope.query._page>0){
+          $scope.query._page--;
+          $scope.getPosts($scope.query);
+          $scope.isLastpage = false;
+       }
+     }
   }]);

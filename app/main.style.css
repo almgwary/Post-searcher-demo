@@ -6,7 +6,7 @@
 
 /*Ropoto*/
 @import url("fonts/Roboto-fontFace.css");
-
+@import url("paging.directive.css"); 
 
 
 /***
@@ -15,10 +15,9 @@
 ==========================================
 ***/
 body{
-      background: #f0f0f0;
-      color: #9a9a9a;
+     
       font-family: 'Roboto-Regular';
-
+      background: #33ab83;
 }
 
 
@@ -103,6 +102,7 @@ body{
 .post-container.ng-scope {
     margin: auto;
     display: block;
+    text-align: center;
 }
 
 textarea.search-input {
@@ -115,6 +115,25 @@ textarea.search-input {
     border-radius: 2px;
 }
 
-.card.search {
+.search {
+    width: 69px;
+    transition: all .4s ease;
+    border: 103px;
+    height: 67px;
+    border-radius: 74px;
+}
+.search:hover {
     width: 100%;
+    /* height: inherit; */
+    border: 103px;
+    height: 77px;
+    border-radius: 10px;
+}
+
+
+
+
+.search:hover {
+    width: 100%;
+    /* height: inherit; */
 }
