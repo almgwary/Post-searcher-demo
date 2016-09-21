@@ -20,16 +20,21 @@ angular.module('myApp.view1', ['ngRoute'])
       _page: 0,
       _limit: 10
     }
+    $scope.isLoading = false ;
 
+    // load posts
     $scope.getPosts = function (query) {
+      $scope.isLoading = true ;
+      
       postsService.getPosts(query)
         .then(function (data) {
+          $scope.isLoading = false ;
           if(data.data.length > 0){
             $scope.posts = data.data;
           }else {
             $scope.isLastpage = true;
           }
-      })
+      });
     }
      $scope.getPosts($scope.query);
 

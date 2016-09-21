@@ -6,7 +6,8 @@
 
 loading {
     display: block;
-    position: absolute;
+    position: initial;
+    margin: 70px;
 }
 .spinner {
   -webkit-animation: rotator 1.4s linear infinite;
