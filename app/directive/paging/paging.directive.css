@@ -21,11 +21,13 @@
 
 .post-content {
     height:40px;
+    font-size: larger;
+    margin-top: 11px;
 }
 .post-header span {
     display: block;
 }
-.divider{
+/*.divider{
     width: calc(100% - 30px);
     height: 1px;
     background: #e0e0e0;
@@ -36,7 +38,7 @@
     padding-left: 15px;
     float: left;
     margin: 1px 15px;
-}
+}*/
 
 .post .information {    
     display: block;
