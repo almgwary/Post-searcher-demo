@@ -1,5 +1,12 @@
-@import url("paging.directive.css"); 
+/***
+==========================================
+                  Directive
+==========================================
+***/
 @import url("directive/post/post.directive.css"); 
+@import url("directive/paging/paging.directive.css"); 
+
+
 /***
 ==========================================
                   Fonts
