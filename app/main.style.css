@@ -96,9 +96,25 @@ body{
 .post .name {
     color: #404040;
     font-family: Roboto-Bold;
+    text-transform: capitalize;
+    font-size: medium;
 }
 
 .post-container.ng-scope {
     margin: auto;
     display: block;
+}
+
+textarea.search-input {
+    overflow: hidden;
+    width: 100%;
+    font-size: 22pt;
+    color:lightslategrey;
+    height: 100%;
+    border: 2px solid #f0f;
+    border-radius: 2px;
+}
+
+.card.search {
+    width: 100%;
 }
