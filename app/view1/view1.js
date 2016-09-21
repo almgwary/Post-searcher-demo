@@ -21,14 +21,6 @@ angular.module('myApp.view1', ['ngRoute'])
       });
     };
   }])
-  //Directive
-  .directive('post', function () {
-    return {
-      restrict: 'E',
-      templateUrl: 'post.html'
-    };
-  })
-
   //controller 
   .controller('View1Ctrl', ['$scope', 'postsService', function ($scope, postsService) {
 
