@@ -10,7 +10,7 @@
 </div>
 <div class="row">
     
-    <div class="col-md-12 post-container">
+    <div class="col-md-12 post-container" ng-if="posts.length>0">
         <!--Start Search Input-->
         <!--Start PostForm Card-->
 
@@ -21,13 +21,16 @@
         </div>
 
         <!--Start  Post-->
-        <post ng-repeat="post in posts"></post>
+        <post ng-repeat="post in posts" ></post>
         <!--End Posts-->
         <!--Fix inifinitScroll calculations-->
         <div style='clear: both;'></div>
         <!--Infinit Scroll -->
         <div infinite-scroll="!isLoading? nextpage() : ''" infinite-scroll-distance="3"></div>
 
+    </div>
+    <div class="col-md-12 not-found" ng-if="!isLoading && posts.length == 0">
+     No Posts Found =D
     </div>
     
 </div>

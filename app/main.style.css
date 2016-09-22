@@ -122,3 +122,12 @@ textarea.search-input {
     margin: 4px 10px;
     padding-top: 24px;
 }
+
+
+/*No Postes Found*/
+.not-found {
+    color: #fff;
+    font-size: 55pt;
+    line-height: 5;
+    text-align: center;
+}
