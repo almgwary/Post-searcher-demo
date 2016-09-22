@@ -51,6 +51,11 @@ body{
 }
 
 
+.search-container{
+    margin: auto;
+    display: block;
+    text-align: center;
+}
 textarea.search-input {
     border: none;
     overflow: auto;

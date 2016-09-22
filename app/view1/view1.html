@@ -1,41 +1,40 @@
-
-<div class="col-md-3"></div>
-<div class="col-md-6 post-container"> 
-    <!--Start Search Input-->
-         <!--Start PostForm Card-->
-        
-    <div class="row  card search {{( query.q.length>0) ? 'focused' : '' }} ">
-                    <span class="icon icon-search"> </span>
-                    <textarea 
-                            ng-model="query.q"
-                            ng-change="getPosts(query)"
-                            class="search-input" 
-                            maxlength="140"
-                            placeholder="Search now =D">
-                    </textarea>
-                   
+<div class="row">
+    
+    <div class="col-md-12 search-container">
+        <div class="row  card search {{( query.q.length>0) ? 'focused' : '' }} ">
+            <span class="icon icon-search"> </span>
+            <textarea ng-model="query.q" ng-change="getPosts(query)" class="search-input" maxlength="140" placeholder="Search now =D"> </textarea>
+        </div>
     </div>
-    <!--End Search Input-->
-    <div>
-         <input  ng-change="getPosts(query)" ng-model="query._page" >
-         <input  ng-change="getPosts(query)" ng-model="query._limit" >
-    </div>
-
-    <!--Start  Post-->
-    <post ng-repeat="post in posts"></post>
-    <!--End Posts-->
-    <!--Fix inifinitScroll calculations-->
-    <div style='clear: both;'></div>
-    <!--Infinit Scroll -->
-    <div infinite-scroll="!isLoading? nextpage() : ''" infinite-scroll-distance="3"></div>
-
+  
 </div>
-<div class="col-md-3"></div>
+<div class="row">
+    
+    <div class="col-md-12 post-container">
+        <!--Start Search Input-->
+        <!--Start PostForm Card-->
 
+        <!--End Search Input-->
+        <div>
+            <!--<input  ng-change="getPosts(query)" ng-model="query._page" >
+         <input  ng-change="getPosts(query)" ng-model="query._limit" >-->
+        </div>
+
+        <!--Start  Post-->
+        <post ng-repeat="post in posts"></post>
+        <!--End Posts-->
+        <!--Fix inifinitScroll calculations-->
+        <div style='clear: both;'></div>
+        <!--Infinit Scroll -->
+        <div infinite-scroll="!isLoading? nextpage() : ''" infinite-scroll-distance="3"></div>
+
+    </div>
+    
+</div>
 <!--<paging></paging>-->
 <div class="card-number">
-   <loading ng-if="isLoading"></loading>
-   <span ng-if="!isLoading">
+    <loading ng-if="isLoading"></loading>
+    <span ng-if="!isLoading">
         <div> {{query._page}}</div>
         <div> Page</div>
    </span>
