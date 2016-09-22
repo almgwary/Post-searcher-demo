@@ -12,7 +12,7 @@ angular.module('myApp.view1', ['ngRoute'])
 
  
   //controller 
-  .controller('View1Ctrl', ['$scope', 'postsService', function ($scope, postsService) {
+  .controller('View1Ctrl', ['$scope', 'postsService','$timeout', function ($scope, postsService,$timeout) {
 
     $scope.posts = [];
     $scope.query = {
@@ -25,8 +25,8 @@ angular.module('myApp.view1', ['ngRoute'])
     // load posts
     $scope.getPosts = function (query) {
       $scope.isLoading = true ;
-      
-      postsService.getPosts(query)
+      $timeout( function(){
+        postsService.getPosts(query)
         .then(function (data) {
           $scope.isLoading = false ;
           if(data.data.length > 0){
@@ -34,7 +34,8 @@ angular.module('myApp.view1', ['ngRoute'])
           }else {
             $scope.isLastpage = true;
           }
-      });
+      })
+      },5000);;
     }
      $scope.getPosts($scope.query);
 
