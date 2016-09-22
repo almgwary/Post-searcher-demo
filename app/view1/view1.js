@@ -30,7 +30,7 @@ angular.module('myApp.view1', ['ngRoute'])
         .then(function (data) {
           $scope.isLoading = false ;
           if(data.data.length > 0){
-            $scope.posts = data.data;
+            $scope.posts=$scope.posts.concat(data.data);
           }else {
             $scope.isLastpage = true;
           }
