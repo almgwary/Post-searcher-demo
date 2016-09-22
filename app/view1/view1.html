@@ -4,7 +4,8 @@
     <!--Start Search Input-->
          <!--Start PostForm Card-->
         
-    <div class="row  card search ">
+    <div class="row  card search {{( query.q.length>0) ? 'focused' : '' }} ">
+                    <span class="icon icon-search"> </span>
                     <textarea 
                             ng-model="query.q"
                             ng-change="getPosts(query)"

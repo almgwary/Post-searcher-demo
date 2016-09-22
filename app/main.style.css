@@ -52,13 +52,21 @@ body{
 
 
 textarea.search-input {
+    border: none;
+    overflow: auto;
+    outline: none;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
     overflow: hidden;
-    width: 100%;
+    width: 90%;
     font-size: 22pt;
-    color:lightslategrey;
+    color: lightslategrey;
     height: 100%;
-    border: 2px solid #f0f;
+    border: 0px solid #f0f;
     border-radius: 2px;
+    display: inline-block;
 }
 
 .search {
@@ -68,7 +76,8 @@ textarea.search-input {
     height: 67px;
     border-radius: 74px;
 }
-.search:hover {
+.search:hover,
+.focused {
     width: 100%;
     /* height: inherit; */
     border: 103px;
@@ -77,11 +86,10 @@ textarea.search-input {
 }
 
 
-
-
-.search:hover {
-    width: 100%;
-    /* height: inherit; */
+.search:hover .icon-search,
+.focused .icon-search {
+    top: -16px;
+    left: -5px;
 }
 
 .card-number {
