@@ -54,4 +54,9 @@ angular.module('myApp.view1', ['ngRoute'])
           $scope.isLastpage = false;
        }
      }
+
+     $scope.search = function(){
+       $scope.posts= [];
+        $scope.getPosts($scope.query);
+     }
   }]);

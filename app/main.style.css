@@ -60,7 +60,6 @@ textarea.search-input {
     border: none;
     overflow: auto;
     outline: none;
-
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
@@ -69,9 +68,10 @@ textarea.search-input {
     font-size: 22pt;
     color: lightslategrey;
     height: 100%;
-    border: 0px solid #f0f;
+    border: 0px ;
     border-radius: 2px;
     display: inline-block;
+    line-height: 2.3;
 }
 
 .search {

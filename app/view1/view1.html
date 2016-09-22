@@ -3,7 +3,7 @@
     <div class="col-md-12 search-container">
         <div class="row  card search {{( query.q.length>0) ? 'focused' : '' }} ">
             <span class="icon icon-search"> </span>
-            <textarea ng-model="query.q" ng-change="getPosts(query)" class="search-input" maxlength="140" placeholder="Search now =D"> </textarea>
+            <textarea ng-model="query.q" ng-change="search()" class="search-input" maxlength="140" placeholder="Search now =D"> </textarea>
         </div>
     </div>
   
