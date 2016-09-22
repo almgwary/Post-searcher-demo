@@ -35,7 +35,7 @@ angular.module('myApp.view1', ['ngRoute'])
             $scope.isLastpage = true;
           }
       })
-      },5000);;
+      },2000);;
     }
      $scope.getPosts($scope.query);
 
