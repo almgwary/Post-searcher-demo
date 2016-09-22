@@ -7,7 +7,7 @@
 loading {
     display: block;
     position: initial;
-    margin: 70px;
+    margin: 20px;
 }
 .spinner {
   -webkit-animation: rotator 1.4s linear infinite;
@@ -46,37 +46,37 @@ loading {
 
 @-webkit-keyframes colors {
   0% {
-    stroke: #fff;
+    stroke: dimgray;
   }
   25% {
-    stroke: #fff;
+    stroke: dimgray;
   }
   50% {
-    stroke: #fff;
+    stroke: dimgray;
   }
   75% {
-    stroke: #fff;
+    stroke: dimgray;
   }
   100% {
-    stroke: #fff;
+    stroke: dimgray;
   }
 }
 
 @keyframes colors {
    0% {
-    stroke: #fff;
+    stroke: dimgray;
   }
   25% {
-    stroke: #fff;
+    stroke: dimgray;
   }
   50% {
-    stroke: #fff;
+    stroke: dimgray;
   }
   75% {
-    stroke: #fff;
+    stroke: dimgray;
   }
   100% {
-    stroke: #fff;
+    stroke: dimgray;
   } 
 }
 @-webkit-keyframes dash {
