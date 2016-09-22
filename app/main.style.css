@@ -83,7 +83,7 @@ textarea.search-input {
 }
 .search:hover,
 .focused {
-    width: 100%;
+    width: 92%;
     /* height: inherit; */
     border: 103px;
     height: 77px;
