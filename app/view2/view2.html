@@ -1,5 +1,39 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+
+ <div ng-repeat="m in messages" class="col-md-2 card socket-card {{m.type}}   wow fadeInUp ">
+    
+          <span class="information">
+            <div class="row"> 
+                <!--Start Name and Time-->
+                <div class="col-md-12 post-header">
+                    <span class="name">
+                        <a  >{{m.type}} </a>
+                        
+                        </span>
+                    <!--<span class="time-ago">{{post.id}}</span>-->
+                </div>
+                <!--End Name and Time-->
+                <div class="divider"></div>
+                <!--Start Post Content-->
+                <div class="col-md-12">
+                    <p class="post-content">
+                       {{m.content}}
+                    </p>
+                </div>
+               {{m|json}}
+
+            </div>
+        </span>
+ </div>
+
+<div class="socket-controller">
+  <input ng-show="status == 'CONNECTED'" ng-model="message" placeholder="ping message">
+<button ng-click="send()"> {{status != 'CONNECTED' ? 'Connect':'Send' }} </button>
+</div>
+<div class="socket-status-card">
+    <loading ng-if="status == 'CONNECTING'"></loading>
+    <span ng-if="status != 'CONNECTING'">
+        <p ng-if="status == 'NOT_CONNECTED'" class="NOT_CONNECTED"> Socket Not Conected</p>
+        <p ng-if="status == 'CONNECTED'" class="CONNECTED"> Socket  Conected</p>
+   </span>
+</div> 
+ 
