@@ -1,25 +1,25 @@
-'use strict';
+(function () {
+  'use strict';
+  angular.module('myApp.view2', ['ngRoute'])
 
-angular.module('myApp.view2', ['ngRoute'])
+    .config(['$routeProvider', function ($routeProvider) {
+      $routeProvider.when('/view2', {
+        templateUrl: 'view2/view2.html',
+        controller: 'View2Ctrl'
+      });
+    }])
 
-  .config(['$routeProvider', function ($routeProvider) {
-    $routeProvider.when('/view2', {
-      templateUrl: 'view2/view2.html',
-      controller: 'View2Ctrl'
-    });
-  }])
+  .controller('View2Ctrl', View2Ctrl);
+   View2Ctrl.$Inject = ['$scope'];
 
-  .controller('View2Ctrl', ['$scope', function ($scope) {
+  function View2Ctrl($scope) {
     $scope.message = '';
     $scope.messages = [];
     $scope.send = function () {
       // handel message sending here
-      console.log('almg create new ysdfes',$scope.message);      
       $scope.openConnection();
       $scope.sendMessage($scope.message);
-     
     };
-
 
     //[CONNECTED, NOT_CONNECTED, CONNECTING]
     $scope.status = 'NOT_CONNECTED';
@@ -27,24 +27,20 @@ angular.module('myApp.view2', ['ngRoute'])
     $scope.websocket;
     // open new connection 
     $scope.openConnection = function () {
-      console.log('almg create new one');
       // create new connection 
       if ($scope.status == 'NOT_CONNECTED') {
-          $scope.status = 'CONNECTING';
-          console.log('almg create new yes');
-          $scope.websocket = new WebSocket($scope.wsUri);
-          $scope.websocket.onopen = function (evt) { onOpen(evt) };
-          $scope.websocket.onclose = function (evt) { onClose(evt) };
-          $scope.websocket.onmessage = function (evt) { onMessage(evt) };
-          $scope.websocket.onerror = function (evt) { onError(evt) };
+        $scope.status = 'CONNECTING';
+        $scope.websocket = new WebSocket($scope.wsUri);
+        $scope.websocket.onopen = function (evt) { onOpen(evt) };
+        $scope.websocket.onclose = function (evt) { onClose(evt) };
+        $scope.websocket.onmessage = function (evt) { onMessage(evt) };
+        $scope.websocket.onerror = function (evt) { onError(evt) };
       }
     }
 
     $scope.sendMessage = function (message) {
-      console.log('almg sending');
-      if ($scope.status== 'CONNECTED') {
-        console.log('almg send');
-        $scope.messages.push({type:'client',content:message});
+      if ($scope.status == 'CONNECTED') {
+        $scope.messages.push({ type: 'client', content: message });
         $scope.websocket.send(message);
       }
     }
@@ -53,10 +49,7 @@ angular.module('myApp.view2', ['ngRoute'])
       $scope.websocket.close();
     }
 
-
-
     function onOpen(evt) {
-      console.log('almg succefylly conected');
 
       $scope.status = 'CONNECTED';
       $scope.$apply();
@@ -70,15 +63,13 @@ angular.module('myApp.view2', ['ngRoute'])
     function onMessage(evt) {
       // writeToScreen('<span style="color: blue;">RESPONSE: ' + evt.data+'</span>');
       // message received
-      $scope.messages.push({type:'server',content:evt.data});
-        $scope.$apply();
+      $scope.messages.push({ type: 'server', content: evt.data });
+      $scope.$apply();
     }
-
     function onError(evt) {
       $scope.status = false;
     }
 
+  }
 
-
-
-  }]);
+})();
