@@ -1,4 +1,5 @@
-angular.module('myApp')
+(function(){
+  angular.module('myApp')
  //Directive
   .directive('loading', function () {
     return {
@@ -6,3 +7,4 @@ angular.module('myApp')
       templateUrl: 'directive/loading/loading.directive.html'
     };
   })
+})();
