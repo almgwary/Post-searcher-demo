@@ -1,7 +1,8 @@
 # Post-searcher-demo
 
     Angularjs App for Post searcher demo with material desgin
-
+<img src="https://raw.githubusercontent.com/almgwary/Post-searcher-demo/master/Untitled.png">
+<img src="https://raw.githubusercontent.com/almgwary/Post-searcher-demo/master/Untitle2d.jpg">
 ## npm start
 
 ## features 
